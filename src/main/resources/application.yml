@@ -1,18 +1,4 @@
 spring:
-  application.name: resilience4j-test
-
-server:
-  port: 8080
-
-resilience4j.retry:
-  configs:
-    default:
-      maxAttempts: 3
-      waitDuration: 1000
-      retryExceptions:
-        - com.psjw.resilience4jtest.exception.RetryException # retryExceptions? ??? ??? ???
-      ignoreExceptions:
-        - com.psjw.resilience4jtest.exception.IgnoreException #retryExceptions? ???? ?? ??? ignoreExceptions? ???
-  instances:
-    simpleRetryConfig:
-      baseConfig: default
+  config:
+    import:
+        - classpath:application-retry.yml
