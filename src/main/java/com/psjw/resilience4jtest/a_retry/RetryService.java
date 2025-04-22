@@ -23,6 +23,7 @@ public class RetryService {
     }
 
     private String callAnotherServer(String param) {
+        log.info("callAnotherServer! your request is {}", param);
         //retry exception은 retry된다.
         throw new RetryException("retry exception");
         //ignore exception은 retry되지 않고 바로 바로 예외가 클라이언트에 전달된다.
